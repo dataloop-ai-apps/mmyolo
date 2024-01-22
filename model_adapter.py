@@ -12,8 +12,17 @@ logger = logging.getLogger('MMYolo')
                               init_inputs={'model_entity': dl.Model})
 class MMYolo(dl.BaseModelAdapter):
     def load(self, local_path, **kwargs):
-        config_file = 'configs/yolox_s_fast_8xb8-300e_coco.py'
-        checkpoint_file = 'configs/yolox_s_fast_8xb8-300e_coco_20230213_142600-2b224d8b.pth'
+        config_name = 'yolox_s_fast_8xb8-300e_coco'
+        config_path = os.path.join(local_path, config_name)
+        if not os.path.exists(config_path):
+            os.system(f'mim download mmyolo --config {config_name} --dest {config_path}')
+
+        files = os.listdir(config_path)
+        for file in files:
+            if file.endswith(".pth"):
+                checkpoint_file = os.path.join(config_path, file)
+            elif file.endswith(".py"):
+                config_file = os.path.join(config_path, file)
 
         logger.info("MMYolo artifacts downloaded successfully, Loading Model")
         self.model = init_detector(config_file, checkpoint_file, device='cpu')  # or device='cuda:0'
