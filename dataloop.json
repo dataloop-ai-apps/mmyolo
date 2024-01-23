@@ -22,7 +22,7 @@
       {
         "name": "mmyolo-deploy",
         "runtime": {
-          "podType": "highmem-xs",
+          "podType": "regular-xs",
           "concurrency": 1,
           "runnerImage": "ludohor/mmyolo:latest",
           "autoscaler": {
@@ -70,7 +70,7 @@
         "moduleName": "mmyolo-module",
         "scope": "project",
         "status": "trained",
-        "configuration": {},
+        "configuration": { "treshold": 0.4 },
         "supportedMethods": {
           "load": true,
           "predict": true,
