@@ -3,7 +3,6 @@
   "displayName": "MMYolo Model",
   "version": "0.1.0",
   "scope": "public",
-
   "description": "MMYolo Model Application by OpenMMLab",
   "attributes": {
     "Provider": "OpenMMLab",
@@ -12,7 +11,6 @@
     "License": "Apache 2.0",
     "Media Type": "Image"
   },
-
   "components": {
     "computeConfigs": [
       {
@@ -44,6 +42,41 @@
         ],
         "functions": [
           {
+            "name": "evaluate_model",
+            "input": [
+              {
+                "type": "Model",
+                "name": "model",
+                "description": "Dataloop Model Entity"
+              },
+              {
+                "type": "Dataset",
+                "name": "dataset",
+                "description": "Dataloop Dataset Entity"
+              },
+              {
+                "type": "Json",
+                "name": "filters",
+                "description": "Dataloop Filter DQL"
+              }
+            ],
+            "output": [
+              {
+                "type": "Model",
+                "name": "model",
+                "description": "Dataloop Model Entity"
+              },
+              {
+                "type": "Dataset",
+                "name": "dataset",
+                "description": "Dataloop Dataset Entity"
+              }
+            ],
+            "displayName": "Evaluate a Model",
+            "displayIcon": "",
+            "description": "Function to evaluate MMYolo model performance"
+          },
+          {
             "name": "predict_items",
             "input": [
               {
@@ -54,14 +87,39 @@
             ],
             "output": [
               {
-                "type": "Annotations[]",
+                "type": "Item[]",
+                "name": "items",
+                "description": "The same input images for prediction."
+              },
+              {
+                "type": "Annotation[]",
                 "name": "annotations",
-                "description": "List of predictions"
+                "description": "The predicted annotations."
               }
             ],
             "displayName": "Predict Items",
             "displayIcon": "",
-            "description": "MMYolo predict function"
+            "description": "Function to run MMYolo inference on items"
+          },
+          {
+            "name": "predict_dataset",
+            "input": [
+              {
+                "type": "Dataset",
+                "name": "dataset",
+                "description": ""
+              },
+              {
+                "type": "Json",
+                "name": "filters",
+                "description": "Dataloop Filter DQL"
+              }
+            ],
+            "output": [
+            ],
+            "displayName": "Predict Items",
+            "displayIcon": "",
+            "description": "Function to run MMYolo inference on items"
           }
         ]
       }
