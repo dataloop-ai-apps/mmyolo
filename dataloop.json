@@ -1,7 +1,7 @@
 {
   "name": "mmyolo",
   "displayName": "MMYolo Model",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scope": "public",
   "description": "MMYolo Model Application by OpenMMLab",
   "attributes": {
