@@ -23,7 +23,7 @@
         "runtime": {
           "podType": "regular-xs",
           "concurrency": 1,
-          "runnerImage": "shadimahameeddl/mm-dl:latest",
+          "runnerImage": "gcr.io/viewo-g/piper/agent/runner/gpu/mmdetection:0.4.0",
           "autoscaler": {
             "type": "rabbitmq",
             "minReplicas": 0,
