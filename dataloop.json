@@ -8,7 +8,7 @@
     "Provider": "OpenMMLab",
     "Category": "Model",
     "Computer Vision": "Object Detection",
-    "License": "Apache 2.0",
+    "License": "GPL 3.0",
     "Media Type": [
       "Image"
     ],
@@ -123,8 +123,7 @@
                 "description": "Dataloop Filter DQL"
               }
             ],
-            "output": [
-            ],
+            "output": [],
             "displayName": "Predict Items",
             "displayIcon": "",
             "description": "Function to run MMYolo inference on items"
