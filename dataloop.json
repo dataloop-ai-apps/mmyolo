@@ -1,7 +1,7 @@
 {
   "name": "mmyolo",
   "displayName": "MMYolo Model",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "scope": "public",
   "description": "MMYolo Model Application by OpenMMLab",
   "attributes": {
@@ -17,7 +17,7 @@
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/mmyolo.git",
-    "gitTag": "0.1.8"
+    "gitTag": "0.1.9"
   },
   "components": {
     "computeConfigs": [
